@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+// C=(M!+N!)/(M+1)!
+
+// 1Й ВАРИАНТ
+    let M = +prompt ("Введите число M: ");
+    let N = +prompt ("Введите число N: ");
+
+    function factM(M) {
+        let a = 1;
+        if (M == 0 || M == 1){
+        return a;
+        }else{
+            for(i = M; i >= 1; i--){
+            a = a * i;
+            }
+        return a;
+        }  
+    }
+    function factN(N) {
+        let b = 1;
+        if (N == 0 || N == 1){
+        return b;
+        }else{
+            for(i = N; i >= 1; i--){
+            b = b * i;
+            }
+        return b;
+        }  
+    }
+    function factM1(M) {
+        let c = 1;
+        if ((M+1) == 0 || (M+1) == 1){
+        return c;
+        }else{
+            for(i = (M+1); i >= 1; i--){
+            c = c * i;
+            }
+        return c;
+        }  
+    }
+    let C = (factM(M)+factN(N))/factM1(M);
+    alert (`Результат вычислений равен: ${C}`);
+
+
+// 2Й ВАРИАНТ (ЗАЦИКЛИВАЕТСЯ)
+
+    //     function factM(M){
+    //         if(M == 0 || M == 1){
+    //         return 1;
+    //         }else{
+    //         return M * factM(M-1);
+    //         }
+    //     }
+    //     console.log ( factM(M) );
+
+    //     function factN(N){
+    //         if(N == 0 || N == 1){
+    //         return 1;
+    //         }else{
+    //         return N * factN(N-1);
+    //         }
+    //     }
+    //     console.log ( factN(N) );
+
+    //     function factM1(M){
+    //         if(((M+1) == 0 || (M+1) == 1)){
+    //         return 1;
+    //         }else{
+    //         return M * factM((M+1)-1);
+    //         }
+    //     }
+    // let C = (factM(M)+factN(N))/factM1(M);
+    // alert (`Результат вычислений равен: ${C}`);
+
+
+// 3Й ВАРИАНТ (ЗАЦИКЛИВАЕТСЯ)
+
+    // function factM(M) {
+    //     return (M != 1 || M != 0) ? M * factM(M - 1) : 1;
+    //     }
+    //     console.log ( factM(M) );
+
+    // function factN(N) {
+    //     return (N != 1 || N != 0) ? N * factN(N - 1) : 1;
+    //     }
+    //     console.log ( factN(N) );
+    
+    //     function factM1(M) {
+    //     return ((M+1) != 1 || (M+1) != 0) ? (M+1) * factM1((M+1) - 1) : 1;
+    //     }
+    //     console.log ( factM1(M) );
+
+    //     let C = (factM(M)+factN(N))/factM1(M);
+    // alert (`Результат вычислений равен: ${C}`);
+   
+</script>
+
+</body>
+</html>
